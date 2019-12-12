@@ -127,6 +127,12 @@
   margin-left: 0;
 }
 
+.social-media-list {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
 .footer-col-wrapper {
   @include relative-font-size(0.9375);
   color: $grey-color;

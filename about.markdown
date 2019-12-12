@@ -6,6 +6,8 @@ permalink: /about/
 
 ### Me
 
+![](assets/images/perfil.jpg)
+
 My name is Gêdhean Alves Vieira and that's my blog. I love to know how things work and that's why I choose to become an engineer.
 I spend most of my free time learning about new things or going out with my girlfriend (we love try something new and exciting). My interests are in the range of engineering, technology, software and artificial intelligence.
 
@@ -21,3 +23,4 @@ Besides that, it's a way to share something useful that can help someone.
 <div>
 {%- include social.html -%}
 </div>
+
