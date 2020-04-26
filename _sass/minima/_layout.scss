@@ -2,8 +2,8 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
+  // border-top: 5px solid $grey-color-dark;
+  border-bottom: 1px solid $grey-color;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -20,7 +20,7 @@
 
   &,
   &:visited {
-    color: $grey-color-dark;
+    color: $grey-color-light;
   }
 }
 
@@ -74,7 +74,7 @@
       text-align: center;
 
       > svg {
-        fill: $grey-color-dark;
+        fill: $grey-color;
       }
     }
 
@@ -211,7 +211,7 @@
 
 .post-meta {
   font-size: $small-font-size;
-  color: $grey-color;
+  color: $grey-color-light;
 }
 
 .post-link {

@@ -26,6 +26,8 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  line-height: 1.85;
+  letter-spacing: .04em;
 }
 
 
@@ -105,6 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: $brand-color;
   text-decoration: none;
+  cursor: pointer;
 
   &:visited {
     color: darken($brand-color, 15%);
