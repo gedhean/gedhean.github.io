@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muito importante!!! 🚨</title>
+  <style>
+    body {
+      background-color: red;
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container img {
+      width: 100%;
+      max-width: 500px;
+    }
+    .container h1 {
+      font-size: 2rem;
+    }
+    /* .container p {
+      font-size: 1.5rem;
+    } */
+    .answers {
+      display: flex;
+      justify-content: center;
+    }
+    .answers button {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      width: 120px;
+    }
+    .answers button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    .answers .btn-1, .answers .btn-2 {
+      width: 140px;
+    }
+    #affair {
+      background-color: yellow;
+      color: #000;
+      padding: 0 0.5rem;
+      border-radius: 5px;
+    }
+    #affair:hover {
+      cursor: help ;
+      background-color: #000;
+      color: #fff;
+    }
+    .affiar {
+      font-size: 0.8rem;
+      font-weight: lighter;
+      margin-top: -16px;
+      margin-bottom: 16px;
+      max-width: 365px;
+      color: rgb(255 255 255 / 89%);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <img
+      id="gif"
+      src="https://media.giphy.com/media/pcOHEAG38BUaY/giphy.gif"
+      alt="POV: You are going on a date with me"
+    >
+    <div class="question">
+      <h1>
+        Tá afim de um <mark id="affair">affair</mark>?
+      </h1>
+      <p class="affiar">(s.m) Caso amoroso ou relação amorosa sem comprometimento formal</p>
+      <div class="answers">
+        <div class="btn-1">
+          <button id="yes" class="yes" >Sim</button>
+        </div>
+        <div class="btn-2">
+          <button id="no" class="no" >Não</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  const waitTime = 5000;
+  const wppLink = 'https://wa.me/5585986130147?text=Boraaaaaa'
+  // The button #no should change its position randomly every time it is clicked
+  const noButton = document.querySelector('#no');
+  const noButtonOffsetTop = noButton.offsetTop;
+  const noButtonOffsetLef = noButton.offsetLeft;
+  const container = document.querySelector('.container');
+
+  function onNoInteraction() {
+    const randomX = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+    const randomY = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+    noButton.style.position = 'absolute';
+    noButton.style.left = `${randomX}px`;
+    noButton.style.top = `${randomY}px`;
+  }
+
+  noButton.addEventListener('click', onNoInteraction);
+  noButton.addEventListener('mouseover', onNoInteraction);
+
+  // The button #yes should trigger a confetti rain
+  const yesButton = document.querySelector('#yes');
+  const gifImg = document.querySelector('#gif');
+  const yesImgSrc = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGJkMDA3NjhlY2MwNTZiMmRlOTRjODJhOWU2Y2Q3MGQzYmFiMDU3MSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/NEvPzZ8bd1V4Y/giphy.gif"
+
+  function onYesInteraction() {
+    gifImg.src = yesImgSrc;
+    try {
+      confetti.create(null, { resize: true })({
+        particleCount: 200,
+        spread: 200,
+        origin: { y: 0.6 }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    document.querySelector('.question').style.display = 'none';
+    setTimeout(() => {
+      window.location.href = wppLink
+    }, waitTime);
+  }
+
+  yesButton.addEventListener('click', onYesInteraction);
+</script>
+</html>
